@@ -20,5 +20,5 @@ jobs:
   my-test-job:
     runs-on: ubuntu-latest
     steps:
-       - run: echo "Hello, I have the option ${{ github.event.inputs.my-test-value }} !!!  ${{ github.event.inputs.environment == 'option-a' }} ${{ github.event.inputs.name }}"
+       - run: echo "Hello, I have the option ${{ github.event.inputs.my-test-value }} !!!  ${{ github.event.inputs.my-test-value == 'option-a' }} ${{ github.event.inputs.name }}"
     
