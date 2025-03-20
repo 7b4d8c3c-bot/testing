@@ -1,0 +1,24 @@
+name: My example
+
+on:
+  workflow_dispatch:
+    inputs:
+      my-test-value:
+        type: choice
+        required: true
+        description: "My select example"
+        default: "option-a"
+        options:
+          - "option-a"
+          - "option-b"
+          - "option-c"
+      name:
+        required: true
+
+
+jobs:
+  my-test-job:
+    runs-on: unbuntu-latest
+    steps:
+       - run: echo "Hello, I have the option ${{ github.event.inputs.my-test-value }} !!!  ${{ github.event.inputs.environment == 'option-a' }} ${{ github.event.inputs.name }}"
+    
